@@ -10,9 +10,9 @@ import misaka
 User = get_user_model()
 
 
-class Posts(models.Model):
+class Post(models.Model):
 	user = models.ForeignKey(User, related_name='posts')
-	created_at = models.DataTimeField(auto_now=True)
+	created_at = models.DateTimeField(auto_now=True)
 	message = models.TextField()
 	message_html = models.TextField(editable=False)
 	group = models.ForeignKey(Group, related_name='posts', null=True, blank=True)
